@@ -19,7 +19,7 @@ classifiers = [
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Intended Audience :: Science/Research",
 ]
-# dependencies = [
+dependencies = [
 #     "addict==2.3",
 #     "cadet-python>=0.14",
 #     "corner>=2.2.1",
@@ -33,12 +33,12 @@ classifiers = [
 #     "psutil>=5.9.8",
 #     "pymoo>=0.6",
 #     "scipy>=1.11",
-# ]
+]
 
 [project.optional-dependencies]
 testing = [
-    "certifi", # tries to prevent certificate problems on windows
-    "pytest",
+    # "certifi", # tries to prevent certificate problems on windows
+    # "pytest",
     # "pre-commit", # system tests run pre-commit
     # "ax-platform>=0.3.5",
 ]
