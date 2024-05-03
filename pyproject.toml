@@ -39,9 +39,8 @@ classifiers = [
 testing = [
     "certifi", # tries to prevent certificate problems on windows
     "pytest",
-    "setuptools",
-    "pre-commit", # system tests run pre-commit
-    "ax-platform>=0.3.5",
+    # "pre-commit", # system tests run pre-commit
+    # "ax-platform>=0.3.5",
 ]
 docs = [
     "myst-nb>=0.17.1",
