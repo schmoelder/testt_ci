@@ -22,7 +22,6 @@ jobs:
         #   python-version: "3.12"
         # - os: macos-12
         #   python-version: "3.12"
-
     env:
       CONDA_FILE: environment.yml
 
@@ -55,11 +54,10 @@ jobs:
 
       - name: Update environment
         run: |
-          mamba update --all
-          mamba install python=${{ matrix.python-version }}
-          echo "python=${{ matrix.python-version }}.*" > $CONDA_PREFIX/conda-meta/pinned
           pip install --upgrade setuptools
           pip install --upgrade pip
+          mamba install python=${{ matrix.python-version }}
+          echo "python=${{ matrix.python-version }}.*" > $CONDA_PREFIX/conda-meta/pinned
           mamba env update -f ${{ env.CONDA_FILE }}
         if: steps.cache.outputs.cache-hit != 'true'
 
