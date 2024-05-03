@@ -55,13 +55,14 @@ jobs:
 
       - name: Update environment
         run: |
-          pip install --upgrade setuptools
-          pip install --upgrade pip
+          mamba upgrade setuptools
+          mamba upgrade pip
           mamba install python=${{ matrix.python-version }}
           echo "python=${{ matrix.python-version }}.*" > $CONDA_PREFIX/conda-meta/pinned
-          mamba env update -n cadet-process -f ${{ env.CONDA_FILE }}
+          mamba env update -f ${{ env.CONDA_FILE }}
         if: steps.cache.outputs.cache-hit != 'true'
 
       - name: Install
         run: |
+          echo "today=$(/bin/date -u '+%Y%m%d')" >> $GITHUB_OUTPUT
           pip install -e ./[testing]
