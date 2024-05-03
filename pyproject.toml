@@ -19,27 +19,21 @@ classifiers = [
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Intended Audience :: Science/Research",
 ]
-dependencies = [
-    "addict==2.3",
-    "cadet-python>=0.14",
-    "corner>=2.2.1",
-    "diskcache>=5.4.0",
-    "hopsy>=1.4.0",
-    "joblib>=1.3.0",
-    "numpy>=1.21",
-    "matplotlib>=3.4",
-    "numba>=0.55.1",
-    "pathos>=0.2.8",
-    "psutil>=5.9.8",
-    "pymoo>=0.6",
-    "scipy>=1.11",
-]
-
-[project.urls]
-homepage = "https://github.com/fau-advanced-separations/CADET-Process"
-documentation = "https://cadet-process.readthedocs.io"
-"Bug Tracker" = "https://github.com/fau-advanced-separations/CADET-Process/issues"
-
+# dependencies = [
+#     "addict==2.3",
+#     "cadet-python>=0.14",
+#     "corner>=2.2.1",
+#     "diskcache>=5.4.0",
+#     "hopsy>=1.4.0",
+#     "joblib>=1.3.0",
+#     "numpy>=1.21",
+#     "matplotlib>=3.4",
+#     "numba>=0.55.1",
+#     "pathos>=0.2.8",
+#     "psutil>=5.9.8",
+#     "pymoo>=0.6",
+#     "scipy>=1.11",
+# ]
 
 [project.optional-dependencies]
 testing = [
@@ -47,7 +41,6 @@ testing = [
     "pytest",
     "setuptools",
     "pre-commit", # system tests run pre-commit
-    "flake8", # system tests run flake8
     "ax-platform>=0.3.5",
 ]
 docs = [
@@ -63,6 +56,12 @@ docs = [
 ax = [
     "ax-platform>=0.3.5",
 ]
+
+[project.urls]
+homepage = "https://github.com/fau-advanced-separations/CADET-Process"
+documentation = "https://cadet-process.readthedocs.io"
+"Bug Tracker" = "https://github.com/fau-advanced-separations/CADET-Process/issues"
+
 
 [tool.setuptools.dynamic]
 version = { attr = "CADETProcess.__version__" }
