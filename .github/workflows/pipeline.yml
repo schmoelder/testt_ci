@@ -54,9 +54,7 @@ jobs:
 
       - name: Update environment
         run: |
-          pip install --upgrade setuptools
-          pip install --upgrade pip
-          mamba install python=${{ matrix.python-version }}
+          mamba install python=${{ matrix.python-version }} "setuptools>=69" "pip>=24"
           echo "python=${{ matrix.python-version }}.*" > $CONDA_PREFIX/conda-meta/pinned
           mamba env update -f ${{ env.CONDA_FILE }}
         if: steps.cache.outputs.cache-hit != 'true'
