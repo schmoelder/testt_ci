@@ -44,7 +44,7 @@ jobs:
           use-only-tar-bz2: true # IMPORTANT: This needs to be set for caching to work properly!
 
       - name: Cache conda
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         env:
           # Increase this value to reset cache if environment.yml has not changed
           CACHE_NUMBER: 0
@@ -56,6 +56,7 @@ jobs:
         run: |
           mamba install python=${{ matrix.python-version }}
           pip install --upgrade setuptools
+          pip install --upgrade pip
           echo "python=${{ matrix.python-version }}.*" > $CONDA_PREFIX/conda-meta/pinned
           mamba env update -n cadet-process -f ${{ env.CONDA_FILE }}
         if: steps.cache.outputs.cache-hit != 'true'
