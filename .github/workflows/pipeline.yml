@@ -55,6 +55,7 @@ jobs:
       - name: Update environment
         run: |
           mamba install python=${{ matrix.python-version }}
+          pip install --upgrade setuptools
           echo "python=${{ matrix.python-version }}.*" > $CONDA_PREFIX/conda-meta/pinned
           mamba env update -n cadet-process -f ${{ env.CONDA_FILE }}
         if: steps.cache.outputs.cache-hit != 'true'
